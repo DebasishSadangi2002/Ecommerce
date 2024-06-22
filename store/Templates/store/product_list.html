@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}
+    Product List
+{% endblock title %}
+   
+{% block content %}
+    <style>
+        
+    </style>
+    <div class="products">
+        {% for product in products %}
+            <div class="product">
+                <div class="product-details">
+                    <img src="{{product.image.url}}" alt="{{product.name}}">
+                    <a href="{% url 'store:product_detail' product.category product.id %}" ><h3>{{ product.name }}</h3></a>
+                    <a href="{% url 'store:category' product.category  %}" ><h4>{{product.category}}</h4></a>
+                    <p>{{ product.price }}</p>
+                    <a href="{% url 'cart:add_to_cart' product.id %}" class="btn">Add to Cart</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,90 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+db.sqlite3
+
+# If using the Django Debug Toolbar, avoid committing the toolbar cache
+debug-toolbar/
+
+# Pycharm
+.idea/
+
+# If using the Django migrations
+**/migrations/**
+
+# Local settings
+local_settings.py
+settings_local.py
+
+# Test and coverage reports
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+
+
+# MySQL database file
+*.sql
+*.mysql
+
+# VS Code directory
+.vscode/
+
+# Docker
+docker-compose*.yml
+.dockerignore
+**/docker-compose.override.yml
+**/Dockerfile
+
+# Other
+*.DS_Store
+Thumbs.db
+
+# Environment variable files
+.env

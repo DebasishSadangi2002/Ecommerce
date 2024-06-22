@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block title %}
+    {{product.title}}
+{% endblock title %}
+
+{% block content %}
+<main class="product-detail">
+    <div class="product-gallery">
+        <img src="{{product.image.url}}" alt="Product Image" class="main-image">
+        
+    </div>
+    <div class="product-info">
+        <h1>{{product.name}}</h1>
+        <p class="price">{{product.price}}</p>
+        <p class="description">{{product.description}}</p>
+        <div class="quantity-selector">
+            
+            {% if {{product.avail}} %}
+                
+            
+                
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1">
+            {% endif %}
+        </div>
+        <button class="add-to-cart-button"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+    </div>
+</main>
+{% endblock content %}

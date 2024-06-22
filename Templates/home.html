@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block title %}Home{% endblock title %}
+
+
+{% block content %}
+    <section class="hero">
+      <div class="container">
+          <h2>Welcome to Our Store</h2>
+          <p>Discover a wide range of products for every occasion.</p>
+          <a href="{% url 'store:product_list'  %}" class="btn">Shop Now</a>
+      </div>
+    </section>
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }}!</p>
+        <a href="{% url 'orders:order_history' %}"><p>Your Orders</a>
+        <a href="{% url 'users:logout' %}">Logout</a>
+        <a href="{% url 'cart:cart_detail' %}"><button>Your Cart</button></a>
+    {% else %}
+    <p>Welcome, Guest!</p>
+        <a href="{% url 'users:login' %}">Login</a>
+    {% endif %}
+    <h2>Featured Products</h2>
+    <div class="products">
+        {% for product in latest_products %}
+            <div class="product">
+                <div class="product-details">
+                    <img src="{{product.image.url}}" alt="{{product.name}}">
+                    <a href="{% url 'cart:add_to_cart' product.id %}" class="btn">Add to Cart</a>
+                    <a href="{% url 'store:product_detail' product.category product.id %}" ><h3>{{ product.name }}</h3></a>
+                    <a href="{% url 'store:category' product.category  %}" ><h4>{{product.category}}</h4></a>
+                    <p>{{ product.price }}</p>
+                    
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
+  
